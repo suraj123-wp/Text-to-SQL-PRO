@@ -136,7 +136,7 @@ submit = st.button("Get SQL & Run")
 
 # MySQL connection config (change to match your database credentials)
 db_config = {
-    "host": "localhost",         # Your MySQL host (default: localhost)
+    "host": "127.0.0.1",         # Your MySQL host (default: localhost)
     "port": 3306,                # MySQL port (default: 3306)
     "user": "root",              # Your MySQL username (default: root)
     "password": "Sonali1@2",     # Your MySQL password (replace with your password)

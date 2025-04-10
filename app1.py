@@ -10,7 +10,7 @@ from mysql.connector import pooling
 load_dotenv()
 
 # ✅ Configure Gemini with your API key from environment variables
-api_key = os.getenv("Google_API_KEY")
+api_key = os.getenv("GOOGLE_API_KEY")  # Changed to match environment variable
 if not api_key:
     st.error("Google API Key not found in environment variables!")
 else:
@@ -48,11 +48,11 @@ def get_gemini_response(question, prompt):
 
 # ✅ Optimized MySQL Connection Pooling
 db_config = {
-    "host": "127.0.0.1",
-    "port": 3306,
-    "user": "root",
-    "password": "Sonali1@2",
-    "database": "sales_data_db"
+    "host": os.getenv("DB_HOST", "127.0.0.1"),  # Load from environment variable
+    "port": os.getenv("DB_PORT", 3306),        # Load from environment variable
+    "user": os.getenv("DB_USER", "root"),      # Load from environment variable
+    "password": os.getenv("DB_PASSWORD", ""),  # Load from environment variable
+    "database": os.getenv("DB_NAME", "sales_data_db")  # Load from environment variable
 }
 
 # Connection pool initialization

@@ -136,11 +136,12 @@ submit = st.button("Get SQL & Run")
 
 # MySQL connection config (change to match your database credentials)
 db_config = {
-     "service": "Mysql@127.0.0.1:3306"
-      "user": "root",                # MySQL username
+    "host": "127.0.0.1",           # MySQL host
+    "port": 3306,                  # MySQL port
+    "user": "root",                # MySQL username
     "password": "Sonali1@2",       # MySQL password
+    "database": "sales_data_db"    # Make sure this is the correct DB name
 }
-
 
 if submit and question:
     with st.spinner("Generating SQL and fetching data..."):
